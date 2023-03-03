@@ -1,0 +1,24 @@
+table{
+    background-color: aqua;
+    border-radius: 4%;
+}
+#fnameid:focus {
+   background-color: lightgreen;
+
+}
+#lnameid:focus {
+    background-color: lightgreen;
+    
+ }
+ #emailid:focus {
+    background-color: lightgreen;
+    
+ }
+ #passid:focus {
+    background-color: lightgreen;
+    
+ }
+ #pnid:focus {
+    background-color: lightgreen;
+    
+ }

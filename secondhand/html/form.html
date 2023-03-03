@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>registration form</title>  
+<link rel="stylesheet" href="../css/formcss.css">  
+</head>
+<body bgcolor="FloralWhite">
+<center>
+<table border=5 bgcolor="green" bordercolor="red" width="400px" >
+<tr>
+<th>
+    <form action="formdbh.php" onSubmit="return validation()" method="POST" >
+    <h2>Name</h2>
+<hr color="purple">
+    <label>Firstname</label>
+    <input type="text" name="first_name" id="fnameid"><br><br> 
+    <label>Lastname</label>
+    <input type="text" name="last_name" id="lnameid">
+<hr color="purple">
+    <h2>Email Address</h2>
+<hr color="purple">
+    <label>Email </label>
+    <input  type="email" name="email" id="emailid">
+<hr color="purple">
+    <h2 >Password</h2>
+<hr color="purple">
+<label>Password </label>
+    <input  type="password" name="pass_name" id="passid">
+<hr color="purple">
+    <h2>Contact number</h2>
+<hr color="purple">   
+<label>Phone</label>
+    <input  type="phonenumber" name="pn_name" id="pnid"> 
+<hr color="purple">   
+    <br><br>
+    <button type="submit" id="subid"><b><u>Register</u></b></button>
+    </form>
+</th>
+</tr>
+</table> 
+</center>
+<script>
+    function validation(){
+        var fnameid=document.getElementById("fnameid").value;
+        var lnameid=document.getElementById("lnameid").value;
+        var emailid=document.getElementById("emailid").value;
+        var passid=document.getElementById("passid").value;
+        var pnid=document.getElementById("pnid").value;
+        
+        if(fnameid==""){
+            alert("please enter your firstname");
+            return false;
+        }else if(lnameid==""){
+            alert("please enter your lastname");
+            return false;
+
+        }else if(emailid==""){
+            alert("please enter your email");
+            return false;
+
+        }else if(passid==""){
+            alert("please enter your password");
+            return false;
+        }else if(pnid==""){
+            alert("please enter your phone number")
+            return false;
+        }else{
+            alert("registration is sucessfully completed")
+        }
+        
+
+    }
+</script>
+   
+</body>
+
+</html>

@@ -45,7 +45,7 @@
 					if (!isset($_SESSION['customerLoginId'])) {
 					?>
 						<li class="nav-item">
-							<a class="nav-link " aria-current="page" href="form.html">Register</a>
+							<a class="nav-link " aria-current="page" href="registration.html">Register</a>
 						</li>
 
 					<?php
@@ -75,8 +75,11 @@
 				if(isset($_SESSION['customerLoginId']))	{
 					?>
                 <li>
-				<button class="btn nav-link" name="cLogout"><?php  echo $_SESSION['customerLoginName']; ?><img src="user-circle-solid.png"/></button>
-				</li>
+				<form action="updatedb.php" method="post">
+				<button class="btn nav-link" value="<?php  echo $_SESSION['customerLoginId']; ?>" name="cLogout"><?php  echo $_SESSION['customerLoginName']; ?><img src="user-circle-solid.png"/></button>
+				
+			</form>
+			</li>
 				<?php
 				}
 				?>

@@ -1,5 +1,5 @@
 <?php
-  session_start(); 
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -78,34 +78,40 @@
                    
                </tr>
                <?php
+               session_start(); 
                  $total=0;
-                 if(isset($_SESSION['cart']))
-                 {
-                     foreach($_SESSION['cart'] as $key=>$value)
-                     {
+                 
+
+                  $con = mysqli_connect("localhost", "root", "", "secondhand");
+                  $quer = "SELECT*FROM `cart` where cart_email='$_SESSION[customerLoginId]' ";
+                  $query_run = mysqli_query($con, $quer);
+                  if (mysqli_num_rows($query_run) > 0) {
+                    foreach ($query_run as $ro){
                       
-                         $total=$total+$value['secondhandkey'];
+
+                    
                          echo "
                                <tr>
                                  <td>1</td>
-                                 <td>$value[namekey]</td>
-                                 <td>$value[originalkey]</td>
-                                 <td>$value[secondhandkey]</td>
-                                 <td>$value[Quantity]</td>
+                                 <td>$ro[product_name]</td>
+                                 <td>$ro[original_price]</td>
+                                 <td>$ro[secondhand_price]</td>
+                                 <td>$ro[quantity]</td>
                                  <td>
-                                 <form action='manage_cart.php' method='POST'>
+                                 <form action='manage_carttesting.php' method='POST'>
                                    <button type='submit' name='Buy_Item' class='btn btn-sm' style='background-color: Gold;'>Buy</button>
                                    <button type='submit' name='Remove_Item' class='btn btn-sm' style='background-color: red;'>Remove</button>
-                                   <input type='hidden' name='mcBUYnamekey' value='$value[namekey]'>
-                                   <input type='hidden' name='mcidkey' value='$value[idkey]'>
-                                   <input type='hidden' name='mcBUYpricekey' value='$value[secondhandkey]'>
+                                   <input type='hidden' name='mcBUYnamekey' value='$ro[product_name]'>
+                                   <input type='hidden' name='mcidkey' value='$ro[product_id]'>
+                                   <input type='hidden' name='mcBUYpricekey' value='$ro[secondhand_price]'>
                                  </form>
                                  </td>
                                </tr>
                               ";
                      }
-                 }               
-                
+                                
+                    }
+                  
                ?>     
             
                  

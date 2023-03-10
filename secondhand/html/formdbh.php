@@ -13,5 +13,5 @@ $sql = "INSERT INTO registrationform(first_name,last_name,email_id,password,phon
 //runing sql command
 mysqli_query($conn,$sql);
 //redirect to same page(i think so)
-header("Location: form.html?signup=success");
+header("Location: registration.html?signup=success");
 ?>

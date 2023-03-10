@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'addtocart/manage_cart.php'; ?>
+<?php include 'addtocart/manage_carttesting.php'; ?>
 
 
 <head>
